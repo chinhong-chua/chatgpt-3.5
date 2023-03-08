@@ -6,8 +6,8 @@ import axios, { AxiosError } from "axios";
 // });
 // const openai = new OpenAIApi(configuration);
 
-const url = import.meta.env.VITE_API_KEY;
-const apiKey = import.meta.env.VITE_API_URL;
+const url = import.meta.env.VITE_API_URL;
+const apiKey = import.meta.env.VITE_API_KEY;
 const model = "gpt-3.5-turbo";
 
 export async function chat(messages: ChatMessage[]) {
