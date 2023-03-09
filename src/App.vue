@@ -1,5 +1,8 @@
 <template>
-  <div
+
+
+  <div class=" min-h-screen min-w-fit">
+    <div
     class="bg-cyan-100 h-12 flex items-center justify-between p-3 text-blue-500 font-serif font-bold sticky top-0"
   >
     <h1 class="flex-1 text-center">
@@ -7,42 +10,16 @@
     </h1>
     <button
       @click="clearChat"
-      class="bg-green-700 text-white px-4 mb-1 py-2 rounded-xl hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-600"
+      class="bg-green-700 flex text-white px-4 mb-1 py-2 rounded-xl hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-600"
     >
       Clear
     </button>
   </div>
 
-  <div class="bg-gray-100 min-h-screen">
-    <div class="flex h-screen">
-      <!-- <div class="w-64 border-r border-gray-300 px-4 py-8">
-        <div class="flex items-center mb-4">
-          <img
-            src="https://via.placeholder.com/32"
-            alt="User Avatar"
-            class="w-8 h-8 rounded-full mr-2"
-          />
-          <h2 class="text-xl font-bold">John Doe</h2>
-        </div>
-        <div class="flex items-center mb-4">
-          <img
-            src="https://via.placeholder.com/32"
-            alt="User Avatar"
-            class="w-8 h-8 rounded-full mr-2"
-          />
-          <h2 class="text-xl font-bold">Jane Doe</h2>
-        </div>
-        <div class="flex items-center mb-4">
-          <img
-            src="https://via.placeholder.com/32"
-            alt="User Avatar"
-            class="w-8 h-8 rounded-full mr-2"
-          />
-          <h2 class="text-xl font-bold">Bob Smith</h2>
-        </div>
-      </div> -->
+    <div class="flex h-screen bg-gray-100">
+
       <div class="flex-1 flex flex-col">
-        <div class="flex-1 overflow-y-auto px-8 py-6">
+        <div class="flex-1 overflow-y-auto overflow-x-auto px-8 py-6">
           <div v-for="(message, index) in messageList" :key="index">
             <div
               class="flex items-start mb-4"
@@ -85,12 +62,12 @@
           <input
             type="text"
             placeholder="Type your message here"
-            class="flex-1 px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="flex-grow px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
             v-model="newUserMessage"
             @keyup.enter.prevent="sendMessage"
           />
           <button
-            class="ml-3 bg-blue-500 text-white px-8 py-3 rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="ml-3 bg-blue-500 flex text-white px-8 py-3 rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
             @click="sendMessage"
           >
             Send
